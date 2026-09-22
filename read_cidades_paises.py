@@ -5,12 +5,12 @@ con = sqlite3.connect("crud.db")
 cur = con.cursor()
 
 cur.execute("""
-    SELECT nome, populacao
-    FROM paises
-    ORDER BY populacao DESC
+    SELECT cidades.nome, paises.nome
+    FROM cidades
+    INNER JOIN paises
+        ON cidades.pais_id = paises.id
 """)
 
 resultado = cur.fetchall()
-
 
 con.close()

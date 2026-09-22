@@ -6,8 +6,8 @@ cur = con.cursor()
 
 cur.execute("""
     SELECT nome, populacao
-    FROM paises
-    ORDER BY populacao DESC
+    FROM cidades
+    WHERE populacao > 1000000
 """)
 
 resultado = cur.fetchall()
